@@ -5,6 +5,7 @@
     </div>
     <div class="card-details">
       <div class="card-title">{{ title }}</div>
+      <div class="card-subTitle">{{ subTitle }}</div>
       <div class="card-price">{{ price }}</div>
       <div class="card-available-date">{{ availableDate }}</div>
       <div class="card-details">{{ details }}</div>
@@ -20,10 +21,12 @@
 </template>
 
 <script>
+
 export default {
   name: "PropertyCard",
   props: {
     title: String,
+    subTitle: String,
     price: String,
     availableDate: String,
     details: String,
@@ -65,6 +68,11 @@ export default {
   font-weight: bold;
 }
 
+.card-subTitle {
+  font-size: 15px;
+  font-weight: bold;
+}
+
 .card-price {
   margin-top: 5px;
   font-size: 16px;
@@ -87,6 +95,7 @@ export default {
 
 .posted-by {
   font-size: 16px;
+  font-weight: bolder;
 }
 
 .contact-button {

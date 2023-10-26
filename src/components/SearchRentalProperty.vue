@@ -3,7 +3,7 @@
     <nav class="navbar">
       <div class="left-section">
         <div class="logo">
-          <img class="circular-image" src="@/assets/logo.png" alt="Country" />
+          <img class="circular-image" src="@/assets/logo1.png" alt="Country" />
         </div>
         <div class="nav-item" @mouseover="hoverNavItem = 0" @mouseleave="hoverNavItem = -1">
           <i class="fas fa-compass action-icon" v-if="hoverNavItem === 0"></i>
@@ -22,7 +22,7 @@
           Date Filter
         </div>
         <div class="logo">
-          <img class="country" src="@/assets/country.png" alt="Country" />
+          <img class="country" src="@/assets/singapore.png" alt="Country" />
         </div>
       </div>
       <div class="right-section">
@@ -41,13 +41,14 @@
         <button class="search-button">Search</button>
       </div>
     </div>
-    <div class="background-image" :style="{ backgroundImage: `url(${require('@/assets/cover8.jpg')})` }">
+    <div class="background-image" :style="{ backgroundImage: `url(${require('@/assets/cover6.png')})` }">
       <h1 class="heading">Home to Sengkang</h1>
     </div>
     <PropertyCard
       v-for="(property, index) in properties"
       :key="index"
       :title="property.title"
+      :subTitle="property.subTitle"
       :price="property.price"
       :availableDate="property.availableDate"
       :details="property.details"
@@ -70,40 +71,44 @@ export default {
     return {
       properties: [
         {
-          title: "Luxury Villa with a View",
-          price: "$1,500,000",
-          availableDate: "2023-11-01",
-          details: "Bedrooms: 4, Bathrooms: 3, Size: 2500 sqft",
-          distance: "Distance from Central Point: 2 miles",
-          postedBy: "John Doe",
-          imageUrl: require('@/assets/apartment2.png'),
+          title: "RiverTree's Residence",
+          subTitle: "23 Elmo's Road",
+          price: "$S 4,800,000",
+          availableDate: "Available from 28 June 2023",
+          details: "2 Bedrooms, Bathroom, 612 sqft",
+          distance: "3.2 kms from Exit B of Sengang MRT",
+          postedBy: "Ethan L.",
+          imageUrl: require('@/assets/first.jpeg'),
         },
         {
-          title: "Cozy Apartment in the City",
-          price: "$800,000",
-          availableDate: "2023-11-15",
-          details: "Bedrooms: 2, Bathrooms: 2, Size: 1200 sqft",
-          distance: "Distance from Central Point: 1 mile",
-          postedBy: "Jane Smith",
-          imageUrl: require('@/assets/apartment4.png'),
+          title: "Greenvale Town",
+          subTitle: "Rose Strept 805",
+          price: "S$ 5.200.000",
+          availableDate: "Available",
+          details: "3 Bedrooms, 2 Bathroom, 789 sgft",
+          distance: "43 kms from Exit A of Sengkang MRT",
+          postedBy: "Jessie H",
+          imageUrl: require('@/assets/second.jpeg'),
         },
         {
-          title: "Luxury Villa with a View",
-          price: "$1,500,000",
-          availableDate: "2023-11-01",
-          details: "Bedrooms: 4, Bathrooms: 3, Size: 2500 sqft",
-          distance: "Distance from Central Point: 2 miles",
-          postedBy: "John Doe",
-          imageUrl: require('@/assets/apartment5.png'),
+          title: "RiverTree's Residence",
+          subTitle: "23 Elmo's Road",
+          price: "$S 4,800,000",
+          availableDate: "Available from 28 June 2023",
+          details: "2 Bedrooms, Bathroom, 612 sqft",
+          distance: "3.2 kms from Exit B of Sengang MRT",
+          postedBy: "Ethan L.",
+          imageUrl: require('@/assets/first.jpeg'),
         },
         {
-          title: "Cozy Apartment in the City",
-          price: "$800,000",
-          availableDate: "2023-11-15",
-          details: "Bedrooms: 2, Bathrooms: 2, Size: 1200 sqft",
-          distance: "Distance from Central Point: 1 mile",
-          postedBy: "Jane Smith",
-          imageUrl: require('@/assets/appartment1.jpg'),
+          title: "Greenvale Town",
+          subTitle: "Rose Strept 805",
+          price: "S$ 5.200.000",
+          availableDate: "Available",
+          details: "3 Bedrooms, 2 Bathroom, 789 sgft",
+          distance: "43 kms from Exit A of Sengkang MRT",
+          postedBy: "Jessie H",
+          imageUrl: require('@/assets/second.jpeg'),
         },
       ],
     };
@@ -131,22 +136,22 @@ export default {
 }
 
 .circular-image {
-  border-radius: 50%;
-  width: 50px; /* Adjust the width as needed */
-  height: 50px; /* Adjust the height as needed */
+  border-radius: 10%;
+  width: 120px; 
+  height: 70px;
   object-fit: cover;
 }
 .country{
   border-radius: 70%;
-  width: 30px; /* Adjust the width as needed */
-  height: 30px; /* Adjust the height as needed */
+  width: 30px; 
+  height: 30px;
   object-fit: cover;
 }
 
 .profile-image{
   border-radius: 50%;
-  width: 50px; /* Adjust the width as needed */
-  height: 50px; /* Adjust the height as needed */
+  width: 50px; 
+  height: 50px;
   object-fit: cover;
   margin-left: 50px;
 }
@@ -155,7 +160,7 @@ export default {
   display: flex;
   justify-content: space-between;
   background-color: #faf7f7;
-  padding-left: 300px ;
+  padding-left: 30%;
 }
 
 .nav-item {
