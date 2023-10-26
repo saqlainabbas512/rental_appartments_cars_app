@@ -1,10 +1,36 @@
 <template>
   <div class="home-section">
     <nav class="navbar">
-      <div class="nav-item">Explore</div>
-      <div class="nav-item">My Resale Properties</div>
-      <div class="nav-item">Manage Properties</div>
-      <div class="nav-item">Date Filter</div>
+      <div class="left-section">
+        <div class="logo">
+          <img class="circular-image" src="@/assets/logo.png" alt="Country" />
+        </div>
+        <div class="nav-item" @mouseover="hoverNavItem = 0" @mouseleave="hoverNavItem = -1">
+          <i class="fas fa-compass action-icon" v-if="hoverNavItem === 0"></i>
+          Explore
+        </div>
+        <div class="nav-item" @mouseover="hoverNavItem = 1" @mouseleave="hoverNavItem = -1">
+          <i class="fas fa-home action-icon" v-if="hoverNavItem === 1"></i>
+          My Resale Properties
+        </div>
+        <div class="nav-item" @mouseover="hoverNavItem = 2" @mouseleave="hoverNavItem = -1">
+          <i class="fas fa-cogs action-icon" v-if="hoverNavItem === 2"></i>
+          Manage Properties
+        </div>
+        <div class="nav-item" @mouseover="hoverNavItem = 3" @mouseleave="hoverNavItem = -1">
+          <i class="fas fa-calendar action-icon" v-if="hoverNavItem === 3"></i>
+          Date Filter
+        </div>
+        <div class="logo">
+          <img class="country" src="@/assets/country.png" alt="Country" />
+        </div>
+      </div>
+      <div class="right-section">
+        <div class="logo">
+          <img class="action-button" src="@/assets/action.png" alt="Menu" />
+          <img class="profile-image" src="@/assets/profileP.png" alt="Profile" />
+        </div>
+      </div>
     </nav>
     <div class="content-container">
       <div class="search-bars">
@@ -15,7 +41,7 @@
         <button class="search-button">Search</button>
       </div>
     </div>
-    <div class="background-image" :style="{ backgroundImage: `url(${require('@/assets/cover.png')})` }">
+    <div class="background-image" :style="{ backgroundImage: `url(${require('@/assets/cover8.jpg')})` }">
       <h1 class="heading">Home to Sengkang</h1>
     </div>
     <PropertyCard
@@ -88,13 +114,12 @@ export default {
 <style scoped>
 .home-section {
   text-align: center;
-  padding: 20px;
 }
 
 .background-image {
   width: 100%;
   height: 400px;
-  object-fit: cover;
+  object-fit: fill;
   position: relative;
   display: flex;
   align-items: center;
@@ -105,31 +130,88 @@ export default {
   padding: 0px 0 0 0;
 }
 
-.profile {
-  width: 10%;
-  height: 100%;
-  background-color: #007BFF;
-  justify-content: flex-end;
-  display: flex;
-  padding: 10px;
+.circular-image {
+  border-radius: 50%;
+  width: 50px; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+  object-fit: cover;
+}
+.country{
+  border-radius: 70%;
+  width: 30px; /* Adjust the width as needed */
+  height: 30px; /* Adjust the height as needed */
+  object-fit: cover;
+}
+
+.profile-image{
+  border-radius: 50%;
+  width: 50px; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+  object-fit: cover;
+  margin-left: 50px;
 }
 
 .navbar {
   display: flex;
-  justify-content: center;
-  background-color: #ddd7d7;
-  padding: 10px;
+  justify-content: space-between;
+  background-color: #faf7f7;
+  padding-left: 300px ;
 }
 
 .nav-item {
   margin: 0 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.nav-item:hover {
+  background-color: #569ce7;
+  color: #fff;
+}
+
+.nav-item i {
+  margin-right: 5px;
+  display: none;
+}
+
+.nav-item:hover i {
+  display: inline;
+}
+
+.right-section{
+  display: flex;
+  width: 300px;
+  padding: 10px;
+  align-items: flex-end;
+  background-color: #03356a;
+}
+
+.left-section{
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-button {
+  background-color: #f6f8f9;
+}
+
+.action-icon {
+  margin-right: 5px;
+  font-size: 20px;
 }
 
 .search-bars {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(210, 246, 186, 0.7);
+  background-color: rgba(190, 247, 152, 0.7);
   padding: 10px;
 }
 
@@ -153,24 +235,11 @@ export default {
 
 .heading {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 24px;
-  color: white;
-}
-
-.action-button {
-  background-color: blue;
-  color: #fff;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  font-size: 20px;
-  margin-left: 10px;
-}
-
-.action-icon {
-  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 45px;
+  color: rgb(251, 247, 247);
 }
 </style>
